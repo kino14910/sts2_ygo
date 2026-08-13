@@ -1,0 +1,77 @@
+select,
+::picker(select) {
+    appearance: base-select;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #0f3460;
+    background: #1a1a2e;
+    color: #fff;
+    border-radius: 5px;
+    flex: 1;
+    transition: 0.4s;
+}
+
+select:hover,
+select:focus {
+    outline: none;
+    border-color: #e94560;
+}
+
+select::picker-icon {
+    color: #999999;
+    transition: 0.4s rotate;
+}
+
+select:open {
+    border-radius: 8px 8px 0 0;
+}
+
+select:open::picker-icon {
+    rotate: 180deg;
+}
+
+::picker(select) {
+    border: none;
+}
+
+option {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    color: white;
+    border: 1px solid #e94560;
+    background: #1a1a2e;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+option:first-of-type {
+    border-radius: 0;
+}
+
+option:last-of-type {
+    border-radius: 0 0 8px 8px;
+}
+
+::picker(select) {
+    border-radius: 0 0 8px 8px;
+}
+
+option:not(option:last-of-type) {
+    border-bottom: none;
+}
+
+option:focus {
+    background: #e94560;
+}
+
+option:hover {
+    background: #c13651;
+}
+
+option .icon {
+    font-size: 1.6rem;
+    text-box: trim-both cap alphabetic;
+}
